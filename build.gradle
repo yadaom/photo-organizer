@@ -1,0 +1,42 @@
+plugins {
+  id 'java'
+  id 'io.quarkus'
+}
+
+repositories {
+  mavenCentral()
+  mavenLocal()
+}
+
+dependencies {
+  implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+  implementation 'io.quarkus:quarkus-picocli'
+  implementation 'io.quarkus:quarkus-arc'
+  // https://mvnrepository.com/artifact/com.google.code.gson/gson
+  implementation 'com.google.code.gson:gson:2.11.0'
+  // https://mvnrepository.com/artifact/com.drewnoakes/metadata-extractor
+  implementation 'com.drewnoakes:metadata-extractor:2.19.0'
+  implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.2'
+
+  testImplementation 'io.quarkus:quarkus-junit5'
+}
+
+group 'com.omprakashyadav'
+version 'v0.1'
+
+java {
+  sourceCompatibility = JavaVersion.VERSION_17
+  targetCompatibility = JavaVersion.VERSION_17
+}
+
+test {
+  systemProperty "java.util.logging.manager", "org.jboss.logmanager.LogManager"
+}
+compileJava {
+  options.encoding = 'UTF-8'
+  options.compilerArgs << '-parameters'
+}
+
+compileTestJava {
+  options.encoding = 'UTF-8'
+}
