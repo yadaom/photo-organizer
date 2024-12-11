@@ -1,6 +1,12 @@
-# com.omprakashyadav.arrangephotos
+# Photo Organizer
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+Use this project to organize your images and video.
+I build this project to organize my media by year and month. 
+It uses image and video metadata to find the creation date and organize the media into respective folders.
+The Project is written to not touch your files and copy them to new directory. So, it doesn't disturb your current directory structure.
+Over time, I will try to add more feature to this.
+
+# How to run?
 
 If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
 
